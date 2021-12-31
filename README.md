@@ -13,3 +13,7 @@
     ![开局](test_img/test1.jpg)
 
     ![平局](test_img/test2.jpg)
+
+	![赢](test_img/test3.jpg)
+	
+	![输](test_img/test4.jpg)

@@ -18,16 +18,16 @@ public:
     void AI();
     int get(int a, int b);
     int judge();
-};  //´æ´¢ÆåÅÌĞÅÏ¢
-void checkerboard::play(int a, int b)  //Íæ¼ÒÏÂÆå
+};  //å­˜å‚¨æ£‹ç›˜ä¿¡æ¯
+void checkerboard::play(int a, int b)  //ç©å®¶ä¸‹æ£‹
 {
     x[a][b] = 1;
 }
-int checkerboard::get(int a, int b)  //»ñÈ¡Ä¿±êÆå¸ñ×´Ì¬
+int checkerboard::get(int a, int b)  //è·å–ç›®æ ‡æ£‹æ ¼çŠ¶æ€
 {
     return x[a][b];
 }
-int checkerboard::judge()   //ÅĞ¶ÏÊ¤¸ºÊÇ·ñ·¢Éú
+int checkerboard::judge()   //åˆ¤æ–­èƒœè´Ÿæ˜¯å¦å‘ç”Ÿ
 {
     if ((x[0][0] == 1 && x[0][1] == 1 && x[0][2] == 1) || (x[1][0] == 1 && x[1][1] == 1 && x[1][2] == 1) || (x[2][0] == 1 && x[2][1] == 1 && x[2][2] == 1) ||
         (x[0][0] == 1 && x[1][0] == 1 && x[2][0] == 1) || (x[0][1] == 1 && x[1][1] == 1 && x[2][1] == 1) || (x[0][2] == 1 && x[1][2] == 1 && x[2][2] == 1) ||
@@ -42,10 +42,10 @@ int checkerboard::judge()   //ÅĞ¶ÏÊ¤¸ºÊÇ·ñ·¢Éú
     else if (x[0][0] != 0 && x[1][0] != 0 && x[2][0] != 0 && x[0][1] != 0 && x[1][1] != 0 && x[2][1] != 0 && x[0][2] != 0 && x[1][2] != 0 && x[2][2] != 0) { return 3; }
     else { return 0; }
 }
-void checkerboard::AI()    //AIÏÂÆå
+void checkerboard::AI()    //AIä¸‹æ£‹
 {
-    //AI¿ÉÒÔÖ±½Ó»ñÊ¤
-    //ĞĞ
+    //AIå¯ä»¥ç›´æ¥è·èƒœ
+    //è¡Œ
     if (x[0][0] == 2 && x[0][1] == 2 && x[0][2] == 0)  x[0][2] = 2;
     else if (x[0][0] == 2 && x[0][2] == 2 && x[0][1] == 0)  x[0][1] = 2;
     else if (x[0][1] == 2 && x[0][2] == 2 && x[0][0] == 0)  x[0][0] = 2;
@@ -55,7 +55,7 @@ void checkerboard::AI()    //AIÏÂÆå
     else if (x[2][0] == 2 && x[2][1] == 2 && x[2][2] == 0)  x[2][2] = 2;
     else if (x[2][0] == 2 && x[2][2] == 2 && x[2][1] == 0)  x[2][1] = 2;
     else if (x[2][1] == 2 && x[2][2] == 2 && x[2][0] == 0)  x[2][0] = 2;
-    //ÁĞ
+    //åˆ—
     else if (x[0][0] == 2 && x[1][0] == 2 && x[2][0] == 0)  x[2][0] = 2;
     else if (x[1][0] == 2 && x[2][0] == 2 && x[0][0] == 0)  x[0][0] = 2;
     else if (x[0][0] == 2 && x[2][0] == 2 && x[1][0] == 0)  x[1][0] = 2;
@@ -65,17 +65,17 @@ void checkerboard::AI()    //AIÏÂÆå
     else if (x[0][2] == 2 && x[1][2] == 2 && x[2][2] == 0)  x[2][2] = 2;
     else if (x[1][2] == 2 && x[2][2] == 2 && x[0][2] == 0)  x[0][2] = 2;
     else if (x[0][2] == 2 && x[2][2] == 2 && x[1][2] == 0)  x[1][2] = 2;
-    //Ğ±
+    //æ–œ
     else if (x[0][0] == 2 && x[1][1] == 2 && x[2][2] == 0)  x[2][2] = 2;
     else if (x[0][0] == 2 && x[2][2] == 2 && x[1][1] == 0)  x[1][1] = 2;
     else if (x[1][1] == 2 && x[2][2] == 2 && x[0][0] == 0)  x[0][0] = 2;
     else if (x[2][0] == 2 && x[1][1] == 2 && x[0][2] == 0)  x[0][2] = 2;
     else if (x[0][2] == 2 && x[1][1] == 2 && x[2][0] == 0)  x[2][0] = 2;
     else if (x[2][0] == 2 && x[0][2] == 2 && x[1][1] == 0)  x[1][1] = 2;
-    //·ÀÖ¹Íæ¼Ò»ñÊ¤
+    //é˜²æ­¢ç©å®¶è·èƒœ
     else if (x[0][0] == 1 && x[1][0] == 0 && x[2][0] == 0 && x[0][1] == 0 && x[1][1] == 2 && x[2][1] == 0 && x[0][2] == 0 && x[1][2] == 0 && x[2][2] == 1)  x[1][2] = 2;
     else if (x[0][0] == 0 && x[1][0] == 0 && x[2][0] == 1 && x[0][1] == 0 && x[1][1] == 2 && x[2][1] == 0 && x[0][2] == 1 && x[1][2] == 0 && x[2][2] == 0)  x[2][1] = 2;
-    //ĞĞ
+    //è¡Œ
     else if (x[0][0] == 1 && x[0][1] == 1 && x[0][2] == 0)  x[0][2] = 2;
     else if (x[0][0] == 1 && x[0][2] == 1 && x[0][1] == 0)  x[0][1] = 2;
     else if (x[0][1] == 1 && x[0][2] == 1 && x[0][0] == 0)  x[0][0] = 2;
@@ -85,7 +85,7 @@ void checkerboard::AI()    //AIÏÂÆå
     else if (x[2][0] == 1 && x[2][1] == 1 && x[2][2] == 0)  x[2][2] = 2;
     else if (x[2][0] == 1 && x[2][2] == 1 && x[2][1] == 0)  x[2][1] = 2;
     else if (x[2][1] == 1 && x[2][2] == 1 && x[2][0] == 0)  x[2][0] = 2;
-    //ÁĞ
+    //åˆ—
     else if (x[0][0] == 1 && x[1][0] == 1 && x[2][0] == 0)  x[2][0] = 2;
     else if (x[1][0] == 1 && x[2][0] == 1 && x[0][0] == 0)  x[0][0] = 2;
     else if (x[0][0] == 1 && x[2][0] == 1 && x[1][0] == 0)  x[1][0] = 2;
@@ -95,14 +95,14 @@ void checkerboard::AI()    //AIÏÂÆå
     else if (x[0][2] == 1 && x[1][2] == 1 && x[2][2] == 0)  x[2][2] = 2;
     else if (x[1][2] == 1 && x[2][2] == 1 && x[0][2] == 0)  x[0][2] = 2;
     else if (x[0][2] == 1 && x[2][2] == 1 && x[1][2] == 0)  x[1][2] = 2;
-    //Ğ±
+    //æ–œ
     else if (x[0][0] == 1 && x[1][1] == 1 && x[2][2] == 0)  x[2][2] = 2;
     else if (x[0][0] == 1 && x[2][2] == 1 && x[1][1] == 0)  x[1][1] = 2;
     else if (x[1][1] == 1 && x[2][2] == 1 && x[0][0] == 0)  x[0][0] = 2;
     else if (x[2][0] == 1 && x[1][1] == 1 && x[0][2] == 0)  x[0][2] = 2;
     else if (x[0][2] == 1 && x[1][1] == 1 && x[2][0] == 0)  x[2][0] = 2;
     else if (x[2][0] == 1 && x[0][2] == 1 && x[1][1] == 0)  x[1][1] = 2;
-    //ÌØÊâÇé¿ö
+    //ç‰¹æ®Šæƒ…å†µ
     else if (x[0][1] == 1 && x[1][0] == 1 && x[1][1] == 2)  x[0][2] = 2;
     else if (x[0][1] == 1 && x[1][2] == 1 && x[1][1] == 2)  x[0][0] = 2;
     else if (x[1][0] == 1 && x[2][1] == 1 && x[1][1] == 2)  x[0][0] = 2;
@@ -139,38 +139,38 @@ public:Mat part, play, ai, img;
       void draw();
 };
 
-void UI::init()   //³õÊ¼»¯±³¾°ºÍ±êÌâ
+void UI::init()   //åˆå§‹åŒ–èƒŒæ™¯å’Œæ ‡é¢˜
 {
     Mat img1(700, 700, CV_8UC3, Scalar(255, 255, 255));
     img1.copyTo(img);
     cvui::text(img, 280, 40, "TicTacToe", 1, 0x000000);
 }
 
-void UI::tip() //ĞÅÏ¢ÌáÊ¾
+void UI::tip() //ä¿¡æ¯æç¤º
 {
     cvui::text(img, 20, 20, "It's your turn!", 0.6, 0x808080);
     cvui::text(img, 12, 60, "Press esc to exit the game", 0.6, 0x800000);
 }
 
-void UI::win() //ĞÅÏ¢ÌáÊ¾
+void UI::win() //ä¿¡æ¯æç¤º
 {
     cvui::text(img, 20, 20, "You win!", 0.6, 0x808080);
     cvui::text(img, 12, 60, "Press esc to exit the game", 0.6, 0x800000);
 }
 
-void UI::lose() //ĞÅÏ¢ÌáÊ¾
+void UI::lose() //ä¿¡æ¯æç¤º
 {
     cvui::text(img, 20, 20, "You lost!", 0.6, 0x808080);
     cvui::text(img, 12, 60, "Press esc to exit the game", 0.6, 0x800000);
 }
 
-void UI::draw() //ĞÅÏ¢ÌáÊ¾
+void UI::draw() //ä¿¡æ¯æç¤º
 {
     cvui::text(img, 20, 20, "Rraw!", 0.6, 0x808080);
     cvui::text(img, 12, 60, "Press esc to exit the game", 0.6, 0x800000);
 }
 
-void UI::deltip()  //Çå³ıÖ®Ç°µÄĞÅÏ¢ÌáÊ¾
+void UI::deltip()  //æ¸…é™¤ä¹‹å‰çš„ä¿¡æ¯æç¤º
 {
     line(img, Point(20, 30), Point(200, 30), Scalar(255, 255, 255), 30, LINE_4, 0);
 }
@@ -187,7 +187,7 @@ int main()
     while (1)
     {
         if (board.judge() == 0) { ui.tip(); }
-        for (a = 0, c = 100; a < 3 && c <= 500; a++, c = c + 200)   //Íæ¼ÒÏÂÆå²¢ÅĞ¶ÏÊó±êÊäÈë,ÈôÓĞÊäÈë£¬½«ĞÅÏ¢´«Èë checkerboard ²¢¸ü¸ÄÍ¼Æ¬ÏÔÊ¾
+        for (a = 0, c = 100; a < 3 && c <= 500; a++, c = c + 200)   //ç©å®¶ä¸‹æ£‹å¹¶åˆ¤æ–­é¼ æ ‡è¾“å…¥,è‹¥æœ‰è¾“å…¥ï¼Œå°†ä¿¡æ¯ä¼ å…¥ checkerboard å¹¶æ›´æ”¹å›¾ç‰‡æ˜¾ç¤º
         {
             for (b = 0, d = 100; b < 3 && d <= 500; b++, d = d + 200)
             {
@@ -197,8 +197,13 @@ int main()
                 }
             }
         }
-        if (i % 2 == 0) { board.AI(); i++; }  //AIÏÂÆå
-        for (a = 0, c = 100; a < 3 && c <= 500; a++, c = c + 200)    //¸üĞÂAIÏÂÆå¶ÔÆåÅÌĞÅÏ¢µÄ¸Ä±ä,¸üĞÂUI½çÃæµÄÍ¼Æ¬ÏÔÊ¾
+        //åˆ¤æ–­æ£‹å±€æ˜¯å¦ç»“æŸ
+        if (board.judge() == 1) { ui.deltip(); ui.win(); imshow("TicTacToe", ui.img); waitKey(); break; }
+        else if (board.judge() == 2) { ui.deltip(); ui.lose(); imshow("TicTacToe", ui.img); waitKey(); break; }
+        else if (board.judge() == 3) { ui.deltip(); ui.draw(); imshow("TicTacToe", ui.img); waitKey(); break; }
+
+        if (i % 2 == 0) { waitKey(30); board.AI(); i++; }  //AIä¸‹æ£‹
+        for (a = 0, c = 100; a < 3 && c <= 500; a++, c = c + 200)    //æ›´æ–°AIä¸‹æ£‹å¯¹æ£‹ç›˜ä¿¡æ¯çš„æ”¹å˜,æ›´æ–°UIç•Œé¢çš„å›¾ç‰‡æ˜¾ç¤º
         {
             for (b = 0, d = 100; b < 3 && d <= 500; b++, d = d + 200)
             {
@@ -207,11 +212,11 @@ int main()
         }
         cvui::update();
         imshow("TicTacToe", ui.img);
-        //ÅĞ¶ÏÆå¾ÖÊÇ·ñ½áÊø
+        //åˆ¤æ–­æ£‹å±€æ˜¯å¦ç»“æŸ
         if (board.judge() == 1) { ui.deltip(); ui.win(); imshow("TicTacToe", ui.img); waitKey(); break; }
         else if (board.judge() == 2) { ui.deltip(); ui.lose(); imshow("TicTacToe", ui.img); waitKey(); break; }
         else if (board.judge() == 3) { ui.deltip(); ui.draw(); imshow("TicTacToe", ui.img); waitKey(); break; }
-        //°´escÍË³ö³ÌĞò
+        //æŒ‰escé€€å‡ºç¨‹åº
         if (waitKey(30) == 27) { break; }
     }
     return 0;
