@@ -10,10 +10,10 @@
 
 * 运行示例：
 
-    ![开局](test_img/test1.jpg)
+    <img src="test_img/test1.jpg" alt="开局" style="zoom:50%;" />
 
-    ![平局](test_img/test2.jpg)
+    <img src="test_img/test2.jpg" alt="平局" style="zoom:50%;" />
 
-	![赢](test_img/test3.jpg)
+	<img src="test_img/test3.jpg" alt="赢" style="zoom:50%;" />
 	
-	![输](test_img/test4.jpg)
+	<img src="test_img/test4.jpg" alt="输" style="zoom:50%;" />
