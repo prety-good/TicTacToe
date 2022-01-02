@@ -17,6 +17,3 @@
 	<img src="test_img/test3.jpg" alt="赢" style="zoom:50%;" />
 	
 	<img src="test_img/test4.jpg" alt="输" style="zoom:50%;" />
-
-
-
